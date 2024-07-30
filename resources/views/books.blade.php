@@ -1,27 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @vite('resources/css/app.css')
+    <title>BOOKWORM</title>
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-400">
+    @include('partials.header')
 
-<div class="container mx-auto" >
-    <table class="table-auto text-black-50">
-        <thead>
-            <tr scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                <th>ID</th>
-                <th>ISBN</th>
-                <th>TITLE</th>
-                <th>AUTHOR</th>
-                <th> DESCRIPTION</th>
-                <th>DATE PUBLISHED</th>
-            </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-            @foreach($books as $book)
-                <tr class="px-6 py-4 whitespace-nowrap">
-                    <td>{{ $book->id }}</td>
-                    <td>{{ $book->isbn }}</td>
-                    <td>{{ $book->title }}</td>
-                    <td>{{ $book->author }}</td>
-                    <td>{{ $book->description }}</td>
-                    <td>{{ $book->date_published }}</td>
+    <div class="container mx-auto px-6 py-4">
+        <table class="table-auto w-full text-gray-900 border border-gray-300">
+            <thead class="bg-gray-600 text-left text-xs font-medium text-white uppercase tracking-wider">
+                <tr class="border-b border-gray-500">
+                    <th class="px-6 py-3">ID</th>
+                    <th class="px-6 py-3">ISBN</th>
+                    <th class="px-6 py-3">TITLE</th>
+                    <th class="px-6 py-3">AUTHOR</th>
+                    <th class="px-6 py-3">DESCRIPTION</th>
+                    <th class="px-6 py-3">DATE PUBLISHED</th>
                 </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-300"
+                @foreach($books as $book)
+                    <tr class="border-b border-gray-300">
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $book->id }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $book->isbn }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $book->title }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $book->author }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $book->description }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">{{ $book->date_published }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+        @yield('content')
+    </div>
+
+    @include('partials.footer')
+</body>
+</html>
