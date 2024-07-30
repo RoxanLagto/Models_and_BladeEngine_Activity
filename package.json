@@ -8,9 +8,14 @@
     "devDependencies": {
         "autoprefixer": "^10.4.19",
         "axios": "^1.6.4",
+        "css": "^3.0.0",
         "laravel-vite-plugin": "^1.0",
         "postcss": "^8.4.40",
+<<<<<<< HEAD
         "tailwindcss": "^3.4.7",
+=======
+        "tailwind": "^4.0.0",
+>>>>>>> 90c51822e85230dbed609719ab4aaffad9811954
         "vite": "^5.0"
     }
 }
