@@ -11,12 +11,6 @@ use Illuminate\Support\Str;
  */
 class BookFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *  protected $model = Book::class;
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
